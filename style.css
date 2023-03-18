@@ -1,0 +1,34 @@
+*{
+    font-style: normal;
+}
+a{
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+
+}
+.menu{
+
+    }
+.menu li{
+    list-style:none;
+    position:relative;
+    
+    border-right:1px solid #c0c0c0;
+    margin: 5px;
+    }
+.menu img{
+    width: 3%;
+}
+.pesquisa img{
+    width: 20px;
+}
+.rodape{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    color: white;
+}
