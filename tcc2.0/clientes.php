@@ -16,7 +16,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Nome Cloente</td>
+                    <td>Nome Cliente</td>
                     <td>4</td>
                 </tr>
             </tbody>

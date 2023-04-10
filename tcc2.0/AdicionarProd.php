@@ -60,24 +60,24 @@ input[type="date"] {
 }
 </style>
 
-    <form>
+    <form action="php_action/criar_produtos.php" method="POST">
        <div class="topo">
        <h1>CADASTRO DE PRODUTO</h1>
        </div>
       <div class="form-group">
         <label for="nome">NOME DO PRODUTO</label>
-        <input type="text" id="nome" name="name" required="">
+        <input type="text" id="name" name="name" required="">
       </div>
       <div class="form-group">
         <label for="qtnd">QUANTIDADE</label>
-        <input type="int" id="qtnd" name="qtnd" required="">
+        <input type="text" id="qtnd" name="qtnd" required="">
       </div>
       <div class="form-group">
         <label for="data">DATA DE ATUALIZAÇÃO</label>
-        <input type="date" id="date" name="data" required="">
+        <input type="date" id="data" name="data" required="">
       </div>
       <div class="form-group">
-        <button type="submit" class="login-button">CADASTRAR</button>
+        <button type="submit" name="btnCadProd" class="login-button">CADASTRAR</button>
       </div>
     </form>
 <?php
