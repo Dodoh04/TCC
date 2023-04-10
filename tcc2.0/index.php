@@ -2,6 +2,14 @@
     include_once "includes/head.php";
     include_once "includes/menu.php";
 ?>
+<style>
+    /*add produto botão*/
+.addProduto {
+    padding: 5px;
+    background-color: #69E7B2;
+    border: none;
+}
+</style>
     <section class="catalogo">
         <div class="pesquisa">
             <h3>MEDICAMENTOS</h3>
@@ -23,7 +31,8 @@
                 </tr>
             </tbody>
         </table>    
-        <a href="#">+ Adicionar</a>  
+        <button class="addProduto"><a href="AdicionarProd.php">+ Adicionar</a>  </button>
+        
         
     </section>
 <?php

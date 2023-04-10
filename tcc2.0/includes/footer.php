@@ -1,29 +1,25 @@
 <footer class="rodape">
-        <table>
-            <thead class="list">
-                <tr>
-                    <th>INICIO</th>
-                    <th>CONTATO</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Estoque</td>
-                    <td>E-mail</td>
-                </tr>
-                <tr>
-                    <td>Clientes</td>
-                    <td>Telefone</td>
-                </tr>
-                <tr>
-                    <td>Pedidos</td>
-                    <td></td>
-                </tr>
-            </tbody>
-            
-        </table> 
+    <style>
+footer p{
+   width: 50%;
+   display: block;
+   margin: 0 auto 0 auto;
+   text-align: center; 
+
+}
+.rodape{
+    width: 100%;
+    height: auto;
+    background-color: #696868;
+    color: #000;
+    margin-bottom: -5px;
+    border-top: 1px solid #000;
+    margin-top: 50px;
+}
+    </style> 
+        <div>
         <p>SOS Farmacia - 2013</p>
+        </div>
     </footer>
 </body>
 </html>
