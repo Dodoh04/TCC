@@ -27,7 +27,7 @@ td{
 }
 .list{
     font-weight: bold;
-    background-color: #ddd;
+    
 }
 
 </style>
