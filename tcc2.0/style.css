@@ -63,6 +63,7 @@ nav{
     margin-bottom: -5px;
     border-top: 1px solid #000;
     margin-top: 50px;
+    bottom:  0;
 }
 
 footer p{
@@ -71,12 +72,15 @@ footer p{
    margin: 0 auto 0 auto;
    background-color: #696868;
    text-align: center; 
+   
 }
+/*tsbela clientes e estoque*/
 tr, td, th{
-    
+    text-align: center;
     display: flex;
     justify-content: space-between;
     padding: 2px 100px 2px 100px;
+
 }
 ul, li{
     display: flex;
@@ -93,3 +97,6 @@ ul, li{
 }
 
 /*tela de login*/
+form{
+    margin: o auto;
+}

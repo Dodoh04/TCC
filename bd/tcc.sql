@@ -22,3 +22,19 @@ create table tcc.Clientes(
     CPFCli varchar(14) not null,
     EmailCli varchar(50) not null
 );
+
+INSERT INTO Produtos 
+VALUES(NULL, "Doril",100, "11/09/2022"),
+(NULL, "Dipirona", 89, "11/09/2022"), 
+(NULL, "Xarelto", 4, "06/09/2022"), 
+(NULL, "Losartana", 50, "10/10/2022");
+
+INSERT INTO Clientes 
+VALUES(NULL, "Marcos da Silva",'100.200.300-33', "marcoo33@silva.com"),
+(NULL, "Jonas Nascimento", '111.222.333-55', "jonas@nacimento.br"), 
+(NULL, "Luan de Souza", '333.444.555-66', "luan@souza.gmail"), 
+(NULL, "Laurentina de Carvalho", '666.222.333-55', "laura@tina.hot");
+
+
+INSERT INTO Clientes 
+VALUES(NULL, "Jose Mario de Oliveira Alves",'100.200.300-33', "marcoo33@silva.com"),

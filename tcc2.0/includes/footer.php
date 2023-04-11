@@ -16,9 +16,15 @@ footer p{
     border-top: 1px solid #000;
     margin-top: 50px;
 }
+footer{
+    bottom: 5px;
+    position: fixed;
+    width: 80%;     
+    text-align: center;
+  }
     </style> 
         <div>
-        <p>SOS Farmacia - 2013</p>
+        <p>SOS Farmacia - 2023</p>
         </div>
     </footer>
 </body>

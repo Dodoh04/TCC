@@ -6,6 +6,7 @@
         width: 40%;
         height: auto;
         border: 0px;
+        margin: 0 auto;
     }
     form img{
         width: 50%;
@@ -19,6 +20,11 @@
         color: #000;
         margin-bottom: 10px;
     }
+    .form-group button{
+      margin-top: 20px;
+      width: 49.5%;
+    }
+
     input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -58,6 +64,7 @@ input[type="password"] {
   transition: background-color 0.3s ease;
   transition: 0.25s;
 }
+
 </style>
 
     <form>

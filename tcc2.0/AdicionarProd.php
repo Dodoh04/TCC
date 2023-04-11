@@ -60,7 +60,7 @@ input[type="date"] {
 }
 </style>
 
-    <form action="php_action/criar_produtos.php" method="POST">
+    <form action="php_action/criar_produto.php" method="POST">
        <div class="topo">
        <h1>CADASTRO DE PRODUTO</h1>
        </div>
