@@ -22,6 +22,14 @@ create table tcc.Clientes(
     CPFCli varchar(14) not null,
     EmailCli varchar(50) not null
 );
+CREATE TABLE `tcc`.`logins` (
+    `idLogin` int NOT NULL AUTO_INCREMENT
+    `login` VARCHAR(100) NOT NULL , 
+    `senha` VARCHAR(30) NOT NULL , 
+    PRIMARY KEY (`idLogin`), 
+    UNIQUE (`senha`, 'login'));
+
+adimin 12345
 
 INSERT INTO Produtos 
 VALUES(NULL, "Doril",100, "11/09/2022"),

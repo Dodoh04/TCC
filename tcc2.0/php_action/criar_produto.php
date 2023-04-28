@@ -16,13 +16,13 @@
 
 			$_SESSION['mensagem'] =  "Cadastrado com sucesso.";
 
-			header('Location: ../index.php');
+			header('Location: ../estoque.php');
 		}
 		else{
 
 			$_SESSION['mensagem'] = "Erro ao cadastrar.";
 
-			header('Location: ../index.php');	
+			header('Location: ../AdicionarProd.php');	
 		}
 	}
 ?>

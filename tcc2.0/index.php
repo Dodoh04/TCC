@@ -1,75 +1,89 @@
 <?php
-    include_once "php_action/conexao_bd.php";
-
     include_once "includes/head.php";
-    include_once "includes/menu.php";
 ?>
 <style>
-    /*add produto botão*/
-.addProduto {
-    padding: 5px;
-    background-color: #69E7B2;
-    border: none;
-}
-tr{
-    width: 90%;
-    text-align: center;
-    border-bottom: solid 1px;
-}
-th{
-    margin-right: 0px;
-    margin: 0 auto;
-}
-td{
-    width: 10%;
-    margin-left: 5px;
-    margin: 0 auto;
-    
-}
-</style>
-    <section class="catalogo">
-        <div class="pesquisa">
-            <h3>MEDICAMENTOS</h3>
-            
-        </div>
-        <table>
-            <thead class="list">
-            
-                <tr>
-                    <th>COD. </th>
-                    <th>NOME</th>
-                    <th>QUANTIDADE</th>
-                </tr>
-               
-            </thead>
-            <tbody>
-                <!-- INICIO DA ESTRUTURA DE REPETIÇÃO EM PHP DE CONSULTA AO BD-->
-            <?php 
-
-                $sql = "SELECT * FROM Produtos";
-
-                $resultado = mysqli_query($connection, $sql);
-
-                    
-                while($dados = mysqli_fetch_array($resultado)){
-
-                ?>	
-                <tr>
-               
-                    <td><?php echo $dados['IdProduto'];?></td>
-                    <td><?php echo $dados['NomeProd'];?></td>
-                    <td><?php echo $dados['QtndProd'];?></td>
-                    
-                </tr>
-                <?php }
-        //FIM DA CONSULTA
-		?>
-            </tbody>
-        </table>        
-
+    form{
+        width: 40%;
+        height: auto;
+        border: 0px;
+        margin: 0 auto;
+    }
+    form img{
+        width: 50%;
+        display: block;
+        margin: 0px auto;
         
-        <button class="addProduto"><a href="AdicionarProd.php">+ Adicionar</a>  </button> 
-    </section>
+    }
+    .form-group label {
+        display: block;
+        font-size: 1.2em;
+        color: #000;
+        margin-bottom: 10px;
+    }
+    .form-group button{
+      margin-top: 20px;
+      width: 49.5%;
+    }
+
+    input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  font-size: 1.2em;
+  color: #555;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+    label{
+        text-align: center;
+        color: #000;
+    }
+    .login-button {
+  background-color: #7EF48A;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 10px;
+  width: 40%;
+  transition: background-color 0.3s ease;
+  transition: 0.25s;
+}
+.esqueci-button {
+  background-color: #F39191;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 10px;
+  width: 40%;
+  transition: background-color 0.3s ease;
+  transition: 0.25s;
+}
+
+</style>
+
+    <form action="php_action/logan.php" method="POST">
+        <h1><img src="img/logoTcc.png" alt=""></h1>
+      <div class="form-group">
+        <label for="username">LOGIN</label>
+        <input type="text" id="username" name="username" required="">
+      </div>
+      <div class="form-group">
+        <label for="password">SENHA</label>
+        <input type="password" id="password" name="password" required="">
+      </div>
+      <div class="form-group">
+      <button type="submit" class="login-button" name="btnLogar">LOGAR</button>
+      <button type="submit" class="esqueci-button">ESQUECI A SENHA</button>
+        
+      </div>
+    </form>
 <?php
     include_once "includes/footer.php";
 ?>
+
