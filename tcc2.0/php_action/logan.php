@@ -3,6 +3,7 @@
 	session_start();
 
 	require_once 'conexao_bd.php';
+	
 
 	if (isset($_POST['btnLogar'])) {
 

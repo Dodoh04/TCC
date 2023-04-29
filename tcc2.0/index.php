@@ -79,7 +79,7 @@ input[type="password"] {
       </div>
       <div class="form-group">
       <button type="submit" class="login-button" name="btnLogar">LOGAR</button>
-      <button type="submit" class="esqueci-button">ESQUECI A SENHA</button>
+      <button type="submit" class="esqueci-button"><a href="esqueciAsenha.php">ESQUECI A SENHA</a></button>
         
       </div>
     </form>
