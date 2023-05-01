@@ -15,6 +15,10 @@
 
 		$linha = mysqli_fetch_assoc($resultado);
 
+		session_start();
+
+		$_SESSION["usuario"] = array($email["login"]);
+
 		if (!$resultado) {
 			echo 'Erro ao executar a consulta: ' . mysqli_error($connection);
 			exit;
