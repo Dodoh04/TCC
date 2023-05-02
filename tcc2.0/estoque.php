@@ -1,10 +1,18 @@
 <?php
-    include_once "php_action/conexao_bd.php";
 
     session_start();
-    
+
+    if(isset($_SESSION["usuario"]) && is_array($_SESSION["usuario"])){
+        require("php_action/conexao_bd.php");
+
+    }else{
+        echo "erro de sessão";
+    }
+
     include_once "includes/head.php";
     include_once "includes/menu.php";
+
+    
 ?>
 <style>
     /*add produto botão*/
@@ -29,9 +37,9 @@ td{
     
 }
 </style>
-    <section class="catalogo">
+<section class="catalogo">
         <div class="pesquisa">
-            <h3>MEDICAMENTOS</h3>
+            <h3>MEDICAMENTOS echo </h3>
             
         </div>
         <table>

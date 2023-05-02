@@ -22,14 +22,16 @@ create table tcc.Clientes(
     CPFCli varchar(14) not null,
     EmailCli varchar(50) not null
 );
-CREATE TABLE `tcc`.`logins` (
-    `idLogin` int NOT NULL AUTO_INCREMENT
-    `login` VARCHAR(100) NOT NULL , 
-    `senha` VARCHAR(30) NOT NULL , 
-    PRIMARY KEY (`idLogin`), 
-    UNIQUE (`senha`, 'login'));
-
-adimin 12345
+CREATE TABLE `tcc`.`usuario` (
+    `idUsuario` INT NOT NULL AUTO_INCREMENT ,
+    `nome` VARCHAR(30) NOT NULL ,
+    `login` VARCHAR(35) NOT NULL ,
+    `senha` VARCHAR(10) NOT NULL ,
+    `acessUsuario` INT(1) NOT NULL ,
+       PRIMARY KEY (`idUsuario`),
+       UNIQUE (`login`),
+       UNIQUE (`senha`)
+)ENGINE = InnoDB;
 
 INSERT INTO Produtos 
 VALUES(NULL, "Doril",100, "11/09/2022"),
@@ -41,8 +43,9 @@ INSERT INTO Clientes
 VALUES(NULL, "Marcos da Silva",'100.200.300-33', "marcoo33@silva.com"),
 (NULL, "Jonas Nascimento", '111.222.333-55', "jonas@nacimento.br"), 
 (NULL, "Luan de Souza", '333.444.555-66', "luan@souza.gmail"), 
-(NULL, "Laurentina de Carvalho", '666.222.333-55', "laura@tina.hot");
+(NULL, "Laurentina de Carvalho", '666.222.333-55', "laura@tina.hot"),
+(NULL, "Jose Mario de Oliveira Alves",'100.200.300-33', "marcoo33@silva.com");
 
-
-INSERT INTO Clientes 
-VALUES(NULL, "Jose Mario de Oliveira Alves",'100.200.300-33', "marcoo33@silva.com"),
+INSERT INTO `usuario` (`idUsuario`, `nome`, `login`, `senha`, `acessUsuario`) 
+VALUES (NULL, 'Douglas', 'douglasoliversa3@gmail.com', '123456', '1'), 
+(NULL, 'teste', 'teste.test@gmail.com', '123', '0');

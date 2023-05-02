@@ -71,15 +71,15 @@ input[type="password"] {
         <h1><img src="img/logoTcc.png" alt=""></h1>
       <div class="form-group">
         <label for="username">LOGIN</label>
-        <input type="text" id="username" name="username" required="">
+        <input type="text" id="login" name="login" required="">
       </div>
       <div class="form-group">
         <label for="password">SENHA</label>
-        <input type="password" id="password" name="password" required="">
+        <input type="password" id="senha" name="senha" required="">
       </div>
       <div class="form-group">
       <button type="submit" class="login-button" name="btnLogar">LOGAR</button>
-      <button type="submit" class="esqueci-button">ESQUECI A SENHA</button>
+      <button type="submit" class="esqueci-button"><a href="esqueciAsenha.php">ESQUECI A SENHA</a></button>
         
       </div>
     </form>
