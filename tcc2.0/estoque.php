@@ -1,14 +1,9 @@
 <?php
 
     session_start();
+    $_SESSION['nome'];
 
-    if(isset($_SESSION["usuario"]) && is_array($_SESSION["usuario"])){
-        require("php_action/conexao_bd.php");
-
-    }else{
-        echo "erro de sessão";
-    }
-
+    include_once "php_action/conexao_bd.php";
     include_once "includes/head.php";
     include_once "includes/menu.php";
 
@@ -39,7 +34,7 @@ td{
 </style>
 <section class="catalogo">
         <div class="pesquisa">
-            <h3>MEDICAMENTOS echo </h3>
+            <h3>MEDICAMENTOS <?php echo $_SESSION['nome'];?> </h3>
             
         </div>
         <table>

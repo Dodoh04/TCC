@@ -1,24 +1,45 @@
 <?php 
-	require_once 'conexao_bd.php';
+
 	
-    if(isset($_POST["login"]) && isset($_POST["senha"]) && $connection != null){
-        $query = $connection->prepare("SELECT * FROM `usuario` WHERE login = ? AND senha = ?");
-        $query->execute(array($_POST["login"], $_POST["senha"]));
 
-        if($query != null){
-            $user = $query;
+	require_once 'conexao_bd.php';
 
-            session_start();
-            $_SESSION["usuario"] = $user["login"];
+	if (isset($_POST['btnLogar'])) {
+        
 
-            header('location: ../estoque.php');
-        }else{
-            echo 'deu erro 1';
+		$login = mysqli_real_escape_string($connection, $_POST['login']);
+		$senha = mysqli_real_escape_string($connection, $_POST['senha']);
 
-           // header('location: ../index.php');
-        }
-    }else{
-        echo 'deu erro 2';
-        //header('location: ../index.php');
-    }
+        session_start();
+	    $_SESSION['nome'] = $login;
+
+		$query = "SELECT * FROM usuario WHERE `login` = '$login' and `senha` = '$senha'";
+
+		$resultado = mysqli_query($connection, $query);
+
+		$linha = mysqli_fetch_assoc($resultado);
+
+		if (!$resultado) {
+			echo 'Erro ao executar a consulta: ' . mysqli_error($connection);
+			exit;
+		}
+
+		$total = mysqli_num_rows($resultado);
+
+
+
+			if($total == 1){
+
+
+				echo 'deu certo';
+
+				header('location: ../estoque.php');
+			}
+			else{
+				echo 'Deu errado!!!!!! <br>';
+			}
+
+
+
+	}
 ?>
