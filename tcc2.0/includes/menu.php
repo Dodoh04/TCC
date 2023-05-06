@@ -5,8 +5,8 @@
         <ul>
             <li><a href="estoque.php">ESTOQUE</a></li>
             <li><a href="clientes.php">CLIENTES</a></li>
-            <li style="margin-left: 300px;"><a href="login.php">PERFIL</a></li>
-            <img src="img/user.png" alt="user">
+            <li style="margin-left: 300px;"><a href="perfil.php"><img src="img/user.png" alt="user"><?php echo $_SESSION['nome'];?></a></li>
+            <form action="php_action/logout.php" method="POST"><button type="submit" name="btnExit" class="login-button">SAIR</button></form>
             
         </ul>
        

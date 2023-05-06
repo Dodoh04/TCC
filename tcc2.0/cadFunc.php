@@ -1,5 +1,22 @@
 <?php
+
+    session_start();
+    
+    
+if($_SESSION['nome'] == NULL){
+    session_start();
+    session_destroy();
+
+    header('location: index.php');
+    exit;
+    
+}else{
+    include_once "php_action/conexao_bd.php";
     include_once "includes/head.php";
+    include_once "includes/menu.php";
+
+    $_SESSION['nome'];
+      
 ?>
 <style>
     form{
@@ -86,5 +103,6 @@ input[type="password"] {
     </form>
 <?php
     include_once "includes/footer.php";
+}
 ?>
 

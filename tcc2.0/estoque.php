@@ -1,13 +1,22 @@
 <?php
 
     session_start();
-    $_SESSION['nome'];
+    
+    
+if($_SESSION['nome'] == NULL){
+    session_start();
+    session_destroy();
 
+    header('location: index.php');
+    exit;
+    
+}else{
     include_once "php_action/conexao_bd.php";
     include_once "includes/head.php";
     include_once "includes/menu.php";
 
-    
+    $_SESSION['nome'];
+      
 ?>
 <style>
     /*add produto botão*/
@@ -34,7 +43,7 @@ td{
 </style>
 <section class="catalogo">
         <div class="pesquisa">
-            <h3>MEDICAMENTOS <?php echo $_SESSION['nome'];?> </h3>
+            <h3>MEDICAMENTOS </h3>
             
         </div>
         <table>
@@ -76,5 +85,7 @@ td{
         <button class="addProduto"><a href="AdicionarProd.php">+ Adicionar</a>  </button> 
     </section>
 <?php
+
     include_once "includes/footer.php";
+}
 ?>

@@ -1,5 +1,9 @@
 <?php
     include_once "includes/head.php";
+    session_start();
+	    
+    session_destroy();
+     
 ?>
 <style>
     form{
@@ -67,7 +71,7 @@ input[type="password"] {
 
 </style>
 
-    <form action="php_action/logan.php" method="POST">
+    <form action="php_action/login.php" method="POST">
         <h1><img src="img/logoTcc.png" alt=""></h1>
       <div class="form-group">
         <label for="username">LOGIN</label>
