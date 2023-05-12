@@ -16,7 +16,9 @@ if($_SESSION['nome'] == NULL){
     include_once "includes/menu.php";
 
     $_SESSION['nome'];
-      
+    
+    
+    $text = "";
 ?>
 <style>
     /*add produto botão*/
@@ -53,6 +55,7 @@ td{
                     <th>COD. </th>
                     <th>NOME</th>
                     <th>QUANTIDADE</th>
+                    <th>DATA DE ATUALIZAÇÃO</th>
                 </tr>
                
             </thead>
@@ -69,10 +72,14 @@ td{
 
                 ?>	
                 <tr>
-               
-                    <td><?php echo $dados['IdProduto'];?></td>
-                    <td><?php echo $dados['NomeProd'];?></td>
-                    <td><?php echo $dados['QtndProd'];?></td>
+                <td><?php echo $dados['IdProduto'];?></td>
+                <td>
+                    <a href="alterar_prod.php?id=<?php echo $dados['IdProduto'] ?>" class=" ">
+                        <?php echo $dados['NomeProd'];?>
+                    </a>
+                </td>
+                <td><?php echo $dados['QtndProd'];?></td>
+                <td><?php echo $dados['DataAtualProd'];?></td>
                     
                 </tr>
                 <?php }

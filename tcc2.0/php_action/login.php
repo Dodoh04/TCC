@@ -5,15 +5,27 @@
 	require_once 'conexao_bd.php';
 
 	if (isset($_POST['btnLogar'])) {
-        
-
-		$login = mysqli_real_escape_string($connection, $_POST['login']);
+		
+		$cpf = mysqli_real_escape_string($connection, $_POST['cpf']);
 		$senha = mysqli_real_escape_string($connection, $_POST['senha']);
 
-        session_start();
-	    $_SESSION['nome'] = $login;
 
-		$query = "SELECT * FROM usuario WHERE `login` = '$login' and `senha` = '$senha'";
+		$sql = "SELECT * FROM usuario WHERE `cpf` = '$cpf'";
+
+		$resultado = mysqli_query($connection,$sql);
+
+		$dados = mysqli_fetch_array($resultado);
+
+		session_start();
+       
+		$_SESSION['cpf'] = $dados['cpf'];
+	    $_SESSION['nome'] = $dados['nome'];
+		$_SESSION['sobrenome'] = $dados['sobrenome'];
+		$_SESSION['email'] = $dados['email'];
+		$_SESSION['sexo'] = $dados['sexo'];
+		
+
+		$query = "SELECT * FROM usuario WHERE `cpf` = '$cpf' and `senha` = '$senha'";
 
 		$resultado = mysqli_query($connection, $query);
 

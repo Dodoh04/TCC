@@ -74,8 +74,8 @@ input[type="password"] {
     <form action="php_action/login.php" method="POST">
         <h1><img src="img/logoTcc.png" alt=""></h1>
       <div class="form-group">
-        <label for="username">LOGIN</label>
-        <input type="text" id="login" name="login" required="">
+        <label for="username">CPF</label>
+        <input type="text" id="cpf" name="cpf" required="">
       </div>
       <div class="form-group">
         <label for="password">SENHA</label>

@@ -55,25 +55,28 @@ td{
                 <tr>
                     <th>NOME</th>
                     <th>E-MAIL</th>
-                    <th class="problema">COD. CLIENTES</th>
+                    <th class="problema">CPF</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- INICIO DA ESTRUTURA DE REPETIÇÃO EM PHP DE CONSULTA AO BD-->
             <?php 
 
-                    $sql = "SELECT * FROM Clientes";
+                    $sql = "SELECT * FROM usuario";
 
                     $resultado = mysqli_query($connection, $sql);
 
-                        
+                    $dado = mysqli_fetch_array($resultado);
+
+                    if($dado['cliente'] = 1){    
+
                     while($dados = mysqli_fetch_array($resultado)){
 
                     ?>	
                 <tr>
-                    <td><?php echo $dados['NomeCli'];?></td>
-                    <td><?php echo $dados['EmailCli'];?></td>
-                    <td><?php echo $dados['IdCliente'];?></td>
+                    <td><?php echo $dados['nome'];?></td>
+                    <td><?php echo $dados['email'];?></td>
+                    <td><?php echo $dados['cpf'];?></td>
                 </tr>
                 <?php }
         //FIM DA CONSULTA
@@ -86,5 +89,5 @@ td{
     </section>
 <?php
     include_once "includes/footer.php";
-                    }
+                    }}
 ?>

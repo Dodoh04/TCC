@@ -23,6 +23,7 @@ if($_SESSION['nome'] == NULL){
         width: 100%;
         height: auto;
         border: 0px;
+        margin-bottom: 100px;
     }
     .topo{
         width: 80%;
@@ -49,7 +50,8 @@ if($_SESSION['nome'] == NULL){
     }
     input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+fieldset {
     width: 60%;
     display: block;
     margin: 0px auto;
@@ -81,28 +83,62 @@ input[type="password"] {
 }
 </style>
 
-    <form>
+<form action="php_action/cadastros_user.php" method="POST">
        <div class="topo">
-       <h1>CADASTRO DE FUNCIONARIOS</h1><img src="img/logoTcc.png" alt="logo">
+       <h1>CADASTRAR</h1><img src="img/logoTcc.png" alt="logo">
        </div>
       <div class="form-group">
-        <label for="nome">NOME</label>
-        <input type="text" id="nome" name="name" required="">
+        <label for="name">NOME</label>
+        <input type="text" id="name" name="name" required="">
       </div>
       <div class="form-group">
-        <label for="text">CPF</label>
+        <label for="sobrenome">SOBRENOME</label>
+        <input type="text" id="sobrenome" name="sobrenome" required="">
+      </div>
+      <div class="form-group">
+        <fieldset>
+            <legend>Nível de acesso</legend>
+
+            <div>
+                <input type="radio" name="acesso" value="Farmaceutico"
+                checked>
+                <label for="huey">Farmacêutico</label>
+            </div>
+
+            <div>
+                <input type="radio" name="acesso" value="Cliente">
+                <label for="dewey">Cliente</label>
+            </div>
+
+            <div>
+                <input type="radio" name="acesso" value="Admistrador">
+                <label for="louie">Administrador</label>
+            </div>
+        </fieldset>
+    </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
         <input type="text" id="cpf" name="cpf" required="">
       </div>
       <div class="form-group">
-        <label for="e-mil">E-MAIL</label>
-        <input type="text" id="email" name="e-mil" required="">
+        <label for="e-mail">E-MAIL</label>
+        <input type="text" id="email" name="email" required="">
       </div>
       <div class="form-group">
-        <button type="submit" class="login-button">CADASTRAR</button>
+        <label for="sexo">SEXO</label>
+        <input type="text" id="sexo" name="sexo" required="">
+      </div>
+      <div class="form-group">
+        <label for="senha">SENHA</label>
+        <input type="password" id="senha" name="senha" required="">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="login-button" name="btnCadastrar">CADASTRAR</button>
       </div>
     </form>
 <?php
     include_once "includes/footer.php";
 }
 ?>
+
 

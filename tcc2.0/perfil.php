@@ -15,7 +15,8 @@ if($_SESSION['nome'] == NULL){
     include_once "includes/head.php";
     include_once "includes/menu.php";
 
-    $_SESSION['nome'];
+
+    
       
 ?>
 <style>
@@ -43,8 +44,12 @@ td{
 </style>
 <section class="catalogo">
         <div class="pesquisa">
-            <h1>PERFIL </h1>
-            
+            <h1><?php echo $_SESSION['nome'];?></h1> 
+            <h3>CPF: <?php echo $_SESSION['cpf'];?></h3>
+	        <h3>NOME: <?php echo $_SESSION['nome'];?></h3>
+		    <h3>SOBRENOME: <?php echo $_SESSION['sobrenome'];?></h3>
+		    <h3>E-MAIL: <?php echo $_SESSION['email'];?></h3>
+		    <h3>SEXO: <?php echo $_SESSION['sexo'];?></h3>
         </div>
                
 
