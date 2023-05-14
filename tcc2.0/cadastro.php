@@ -111,7 +111,7 @@ fieldset {
             </div>
 
             <div>
-                <input type="radio" name="acesso" value="Admistrador">
+                <input type="radio" name="acesso" value="Administrador">
                 <label for="louie">Administrador</label>
             </div>
         </fieldset>

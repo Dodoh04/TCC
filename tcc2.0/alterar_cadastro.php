@@ -120,7 +120,7 @@ margin: 20px auto;
 
 		$id = mysqli_escape_string($connection, $_GET['id']);
 
-		$sql = "SELECT * FROM Produtos WHERE IdProduto = '$id'";
+		$sql = "SELECT * FROM usuario WHERE cpf = '$id'";
 
 		$resultado = mysqli_query($connection,$sql);
 
@@ -130,25 +130,35 @@ margin: 20px auto;
 
 ?>
 
-<form action="php_action/alterar_produto.php" method="POST">
+<form action="php_action/alterar_cadastro.php" method="POST">
    <div class="topo">
-   <h1><?php echo $dados['NomeProd']; ?></h1><img src="img/logoTcc.png" alt="logo">
+   <h1><?php echo $dados['nome']; ?></h1><img src="img/logoTcc.png" alt="logo">
    </div>
   <div class="form-group">
-    <input type="hidden" name = "IdProduto" value="<?php echo $dados['IdProduto']; ?>" required="">
+    <label for="text">CPF</label>
+    <input type="text" name = "cpf" value="<?php echo $dados['cpf']; ?>" required="">
   </div>
   <div class="form-group">
     <label for="text">NOME</label>
-    <input type="text" name="nome" id="nome" value="<?php echo $dados['NomeProd']; ?>" required="">
+    <input type="text" name="nome" id="nome" value="<?php echo $dados['nome']; ?>" required="">
   </div>
   <div class="form-group">
-    <label for="e-mil">QUANTIDADE</label>
-    <input  type="text" name="qtd" id="nome" value="<?php echo $dados['QtndProd']; ?>" required="">
+    <label for="e-mil">SOBRENOME</label>
+    <input  type="text" name="sobrenome" id="sobrenome" value="<?php echo $dados['sobrenome']; ?>" required="">
   </div>
   <div class="form-group">
-    <label for="e-mil">DATA DE ATUALIZAÇÃO</label>
-    <input type="text" name="atualiData" id="nome" value="<?php echo $dados['DataAtualProd']; ?>" required="">
+    <label for="text">USUÁRIO</label>
+    <input type="text" name="acesso" id="acesso" value="<?php echo $dados['nivelAcess']; ?>" required="">
   </div>
+  <div class="form-group">
+    <label for="text">SEXO</label>
+    <input type="text" name="sexo" id="sexo" value="<?php echo $dados['sexo']; ?>" required="">
+  </div>
+  <div class="form-group">
+    <label for="text">E-MAIL</label>
+    <input type="text" name="email" id="email" value="<?php echo $dados['email']; ?>" required="">
+  </div>
+
   <div class="form-group">
     <button type="submit" name="btnAltProd" class="login-button">ALTERAR</button>
     <button type="submit" name="btnExcluirProd" class="esqueci-button">EXCLUIR</button>

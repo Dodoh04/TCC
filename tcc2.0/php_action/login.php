@@ -20,10 +20,12 @@
        
 		$_SESSION['cpf'] = $dados['cpf'];
 	    $_SESSION['nome'] = $dados['nome'];
-		$_SESSION['sobrenome'] = $dados['sobrenome'];
-		$_SESSION['email'] = $dados['email'];
-		$_SESSION['sexo'] = $dados['sexo'];
-		
+		$_SESSION['acesso'] = $dados['nivelAcess'];
+
+
+		if($dados['nivelAcess'] != "Administrador" && $dados['nivelAcess'] != "Farmaceutico"){
+			header('location: ../index.php');
+		}else{
 
 		$query = "SELECT * FROM usuario WHERE `cpf` = '$cpf' and `senha` = '$senha'";
 
@@ -42,14 +44,12 @@
 
 			if($total == 1){
 
-
-				echo 'deu certo';
-
 				header('location: ../estoque.php');
 			}
 			else{
-				echo 'Deu errado!!!!!! <br>';
+				header('location: ../index.php');
 			}
+		}
 
 
 

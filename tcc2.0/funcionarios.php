@@ -13,11 +13,7 @@ if($_SESSION['nome'] == NULL){
 }else{
     include_once "php_action/conexao_bd.php";
     include_once "includes/head.php";
-    if($_SESSION['acesso'] == "Administrador"){
-        include_once "includes/menu.php";
-    }else{
-        include_once "includes/menuFarmaceutico.php";
-    }
+    include_once "includes/menu.php";
 
     $_SESSION['nome'];
       
@@ -61,6 +57,7 @@ td{
                     <th>E-MAIL</th>
                     <th class="problema">CPF</th>
                     <th>SEXO</th>
+                    <th>CARGO</th>
                 </tr>
             </thead>
             <tbody>
@@ -69,16 +66,15 @@ td{
 
                     $sql = "SELECT * FROM usuario";
 
-                    $resultado = mysqli_query($connection, $sql);                      
+                    $resultado = mysqli_query($connection, $sql);
+
+                    
 
                     while($dados = mysqli_fetch_array($resultado)){
-
-                        if($dados['nivelAcess'] != "Cliente"){ echo "";}
+                        if($dados['nivelAcess'] != "Farmaceutico" && $dados['nivelAcess'] != "Administrador"){}
                         else{
-
                     ?>	
                 <tr>
-                
                 <td>
                     <a href="alterar_cadastro.php?id=<?php echo $dados['cpf'] ?>" class=" ">
                         <?php echo $dados['nome'];?>
@@ -87,6 +83,7 @@ td{
                     <td><?php echo $dados['email'];?></td>
                     <td><?php echo $dados['cpf'];?></td>
                     <td><?php echo $dados['sexo'];?></td>
+                    <td><?php echo $dados['nivelAcess'];?></td>
                 </tr>
                 <?php }}
         //FIM DA CONSULTA
@@ -99,5 +96,5 @@ td{
     </section>
 <?php
     include_once "includes/footer.php";
-                    }
+    }
 ?>

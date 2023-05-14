@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    $_SESSION['nome'];
+    $_SESSION['acesso'];
     
     
 if($_SESSION['nome'] == NULL){
@@ -13,12 +15,13 @@ if($_SESSION['nome'] == NULL){
 }else{
     include_once "php_action/conexao_bd.php";
     include_once "includes/head.php";
-    include_once "includes/menu.php";
 
-    $_SESSION['nome'];
+    if($_SESSION['acesso'] == "Administrador"){
+        include_once "includes/menu.php";
+    }else{
+        include_once "includes/menuFarmaceutico.php";
+    }
     
-    
-    $text = "";
 ?>
 <style>
     /*add produto botão*/
@@ -52,7 +55,6 @@ td{
             <thead class="list">
             
                 <tr>
-                    <th>COD. </th>
                     <th>NOME</th>
                     <th>QUANTIDADE</th>
                     <th>DATA DE ATUALIZAÇÃO</th>
@@ -72,7 +74,6 @@ td{
 
                 ?>	
                 <tr>
-                <td><?php echo $dados['IdProduto'];?></td>
                 <td>
                     <a href="alterar_prod.php?id=<?php echo $dados['IdProduto'] ?>" class=" ">
                         <?php echo $dados['NomeProd'];?>
