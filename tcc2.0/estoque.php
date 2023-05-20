@@ -47,10 +47,19 @@ td{
 }
 </style>
 <section class="catalogo">
-        <div class="pesquisa">
+
+        <div class="form-group">
             <h3>MEDICAMENTOS </h3>
-            
+
+
+            <form method="POST">
+            <input type="text" id="pesquisa" name="pesquisa">
+                <button class="addProduto" name="btnCadastrar">PESQUISAR</button> 
+            </form>
+           
         </div>
+
+        
         <table>
             <thead class="list">
             
@@ -65,13 +74,23 @@ td{
                 <!-- INICIO DA ESTRUTURA DE REPETIÇÃO EM PHP DE CONSULTA AO BD-->
             <?php 
 
-                $sql = "SELECT * FROM Produtos";
+if (isset($_POST['btnCadastrar'])) {
+
+                $Produto = mysqli_escape_string($connection,$_POST['pesquisa']);
+				
+                $sql = "SELECT* FROM  Produtos  WHERE NomeProd LIKE '%$Produto%' LIMIT 4";
 
                 $resultado = mysqli_query($connection, $sql);
 
+}else{
+
+                $sql = "SELECT * FROM Produtos";
+
+                $resultado = mysqli_query($connection, $sql);}
+
                     
                 while($dados = mysqli_fetch_array($resultado)){
-
+                
                 ?>	
                 <tr>
                 <td>

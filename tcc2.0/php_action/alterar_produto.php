@@ -47,3 +47,5 @@
 			header('Location: ../estoque.php');	
 		}
 	}
+
+	

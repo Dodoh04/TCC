@@ -52,6 +52,10 @@ td{
         <section class="catalogo">
         <div class="pesquisa">
             <h3>CLIENTES</h3>
+            <form method="POST">
+            <input type="text" id="pesquisa" name="pesquisa">
+                <button class="addProduto" name="btnCadastrar">PESQUISAR</button> 
+            </form>
             
         </div>
         <table>
@@ -66,10 +70,18 @@ td{
             <tbody>
                 <!-- INICIO DA ESTRUTURA DE REPETIÇÃO EM PHP DE CONSULTA AO BD-->
             <?php 
+            if (isset($_POST['btnCadastrar'])) {
+                $nome = mysqli_escape_string($connection,$_POST['pesquisa']);
+
+                $sql = "SELECT* FROM  usuario  WHERE nome LIKE '%$nome%' LIMIT 4";
+
+                $resultado = mysqli_query($connection, $sql);
+
+}else{
 
                     $sql = "SELECT * FROM usuario";
 
-                    $resultado = mysqli_query($connection, $sql);                      
+                    $resultado = mysqli_query($connection, $sql); }                     
 
                     while($dados = mysqli_fetch_array($resultado)){
 
