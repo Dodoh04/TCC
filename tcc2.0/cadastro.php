@@ -95,7 +95,7 @@ fieldset {
         <label for="sobrenome">SOBRENOME</label>
         <input type="text" id="sobrenome" name="sobrenome" required="">
       </div>
-      <div class="form-group">
+      <div class="">
         <fieldset>
             <legend>Nível de acesso</legend>
 
@@ -118,16 +118,30 @@ fieldset {
     </div>
       <div class="form-group">
         <label for="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" required="">
+        <input type="text"  id="cpf" name="cpf" maxlength="11" required="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
       </div>
       <div class="form-group">
         <label for="e-mail">E-MAIL</label>
-        <input type="text" id="email" name="email" required="">
+        <input type="email" id="email" name="email" required="">
       </div>
-      <div class="form-group">
-        <label for="sexo">SEXO</label>
-        <input type="text" id="sexo" name="sexo" required="">
-      </div>
+      <fieldset>
+            <legend>SEXO</legend>
+            <div>
+                <input type="radio" name="sexo" value="Masculino"
+                checked>
+                <label for="huey">Masculino</label>
+            </div>
+
+            <div>
+                <input type="radio" name="sexo" value="Feminino">
+                <label for="dewey">Feminino</label>
+            </div>
+
+            <div>
+                <input type="radio" name="sexo" value="Outros">
+                <label for="louie">Outros</label>
+            </div>
+        </fieldset>
       <div class="form-group">
         <label for="senha">SENHA</label>
         <input type="password" id="senha" name="senha" required="">

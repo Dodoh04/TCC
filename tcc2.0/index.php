@@ -75,7 +75,7 @@ input[type="password"] {
         <h1><img src="img/logoTcc.png" alt=""></h1>
       <div class="form-group">
         <label for="username">CPF</label>
-        <input type="text" id="cpf" name="cpf" required="">
+        <input type="text" id="cpf" name="cpf" maxlength="11" required="">
       </div>
       <div class="form-group">
         <label for="password">SENHA</label>
