@@ -53,7 +53,7 @@ td{
 
 
             <form method="POST">
-            <input type="text" id="pesquisa" name="pesquisa">
+            <input type="search" id="pesquisa" name="pesquisa">
                 <button class="addProduto" name="btnCadastrar">PESQUISAR</button> 
             </form>
            
