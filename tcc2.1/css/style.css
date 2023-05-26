@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+}
+*a{
+    text-decoration: none;
+}
+
+
+/* menu do estoque */
+.menu{
+        
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-top: -20px;
+    background: #D9D9D9;
+    
+}
+.menu li{
+    list-style:none;
+}
+.menu li a{
+    color: #000;
+}
+.menu li a:active{
+    color: #334075;
+}
+.menu li a:hover{
+    color: #05C7F2;
+}
+.logo img{
+    width: 150px;
+    margin-left: 80px;
+    /*background: #fff;*/
+    border-radius: 15px;
+}
+.imgUser img{
+    width: 50px;
+    height: 50px;
+    margin-right: 80px;
+    
+}
+.search{
+    display: flex;
+}
+.search input{
+    height: 30px;
+    border-radius: 10px;
+}
+.search img{
+    width: 30px;
+}
+.nav ul{
+    display: flex;
+}
+.nav ul li{
+    padding: 15px;
+}
+
+
+/* container dos medicamentos */
+.container{
+    width: 60%;
+    margin: 70px auto 0 auto;
+}
+
+
+/* card dos medicamentos e/ou usuarios*/
+.card{
+    width: 100%;
+    border-radius: 15px;
+    background: #D9D9D9;
+    padding: 10px;
+}
+.conteudo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 0 30px 0 30px;
+}
+.conteudo img{
+    height: 50px;
+}
+
+/* rodape */
+.botaoAdd{
+    background: #334075;
+    color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+}
+.botaoAdd a{
+    text-decoration: none;
+}
+
+
+/* rodape */
+
+.rodape{
+    padding: 20px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    background: #D9D9D9;
+}
+.rodape li{
+    list-style: none;
+}
+.rodape img{
+    padding: 30px;
+    width: 210px;
+}
+.suporte{
+    
+}
+.suporte img{
+    padding: 0;
+    width: 25px;
+}
